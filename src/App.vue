@@ -1,28 +1,25 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app" class="container">
+        <Cabecera />
+        <Lista />
+        <button class="btn btn-danger mt-4 btn-block" @click.prevent="SET_REINICIAR">Reiniciar</button>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    import Cabecera from './components/Cabecera.vue';
+    import Lista from './components/Lista.vue';
+    import { mapMutations } from 'vuex';
+    export default {
+        name: 'App',
+        components: {
+            Cabecera,
+            Lista,
+        },
+        methods: {
+          ...mapMutations(['SET_REINICIAR'])
+        },
+    };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
